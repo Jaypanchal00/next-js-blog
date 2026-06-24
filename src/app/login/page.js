@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { ShoppingBag, Loader2, Eye, EyeOff } from "lucide-react";
+import { ShoppingBag, Eye, EyeOff } from "lucide-react";
 import axios from "axios";
 
 export default function LoginPage() {
@@ -165,16 +165,9 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="flex items-center justify-center space-x-1.5 w-full py-2.5 rounded bg-indigo-650 hover:bg-indigo-700 text-white font-semibold cursor-pointer text-sm disabled:opacity-50"
+            className="w-full py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded text-sm disabled:opacity-50 cursor-pointer"
           >
-            {loading ? (
-              <>
-                <Loader2 className="h-4 w-4 animate-spin" />
-                <span>Signing In...</span>
-              </>
-            ) : (
-              <span>Login</span>
-            )}
+            {loading ? "Logging in..." : "Login"}
           </button>
         </form>
 

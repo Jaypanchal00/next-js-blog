@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { X, Loader2 } from "lucide-react";
+import { X } from "lucide-react";
 
 export default function ProductModal({ isOpen, onClose, onSubmit, product = null }) {
   const [name, setName] = useState("");
@@ -175,16 +175,9 @@ export default function ProductModal({ isOpen, onClose, onSubmit, product = null
             <button
               type="submit"
               disabled={isSubmitting}
-              className="flex items-center space-x-1.5 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded text-sm font-semibold cursor-pointer disabled:opacity-50"
+              className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded text-sm font-semibold cursor-pointer disabled:opacity-50"
             >
-              {isSubmitting ? (
-                <>
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                  <span>Saving...</span>
-                </>
-              ) : (
-                <span>Save</span>
-              )}
+              {isSubmitting ? "Saving..." : "Save"}
             </button>
           </div>
         </form>

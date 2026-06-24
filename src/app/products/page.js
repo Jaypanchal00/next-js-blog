@@ -149,7 +149,7 @@ export default function ProductsPage() {
               disabled={loading}
               className="p-2 border border-gray-300 hover:bg-gray-100 rounded text-gray-700 cursor-pointer disabled:opacity-50"
             >
-              <RefreshCw className={`h-4 w-4 ${loading ? "animate-spin text-indigo-600" : ""}`} />
+              <RefreshCw className="h-4 w-4 text-indigo-600" />
             </button>
             
             <button
@@ -176,14 +176,8 @@ export default function ProductsPage() {
 
         {/* Product Grid Layout */}
         {loading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {[1, 2, 3].map((n) => (
-              <div key={n} className="bg-white border border-gray-200 rounded p-4 space-y-3 animate-pulse">
-                <div className="h-5 bg-gray-200 rounded w-2/3" />
-                <div className="h-4 bg-gray-200 rounded w-1/4" />
-                <div className="h-12 bg-gray-200 rounded w-full" />
-              </div>
-            ))}
+          <div className="text-center py-8 text-gray-500 text-sm">
+            Loading products...
           </div>
         ) : products.length === 0 ? (
           <div className="text-center py-12 border border-dashed border-gray-300 rounded bg-white">
